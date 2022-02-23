@@ -6,7 +6,7 @@ const initState = {
     entities: {}
 }
 
-
+let idNumber = 1;
 
 //START--------REDUCER
 
@@ -22,7 +22,7 @@ const todoSlice = createSlice({
             },
             prepare(text) {
                 return {
-                    payload: { id: Math.floor(Math.random() * 10000), text, completed: false }
+                    payload: { id: idNumber++, text, completed: false }
                 }
             }
         },

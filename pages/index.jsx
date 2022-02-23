@@ -1,9 +1,22 @@
-import TodooApp from "../components/Todo/TodooApp";
+import Link from "next/link";
 
 const Home = () => {
   return (
-      <TodooApp />
-  )
-}
+    <>
+      <Link href="/todo_app">
+        <a>
+          <span>Todo APP</span>
+        </a>
+      </Link>
+      <br />
+      <br />
+      <Link href="/post_app">
+        <a>
+          <span>Post APP</span>
+        </a>
+      </Link>
+    </>
+  );
+};
 
 export default Home;

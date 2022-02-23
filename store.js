@@ -1,14 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import todoSlice from "./components/Todo/features/todos/todosSlice";
-import filterSlice from "./components/Todo/features/filter/filterSlice";
+import todoSlice from "./features/Todo/components/todos/todosSlice";
+import filterSlice from "./features/Todo/components/filter/filterSlice";
+import usersSlice from './features/post/components/users/users.Slice';
+import postsSlice from './features/post/components/posts/postsSlice';
 
 const store = configureStore({
     reducer: {
         todos: todoSlice,
-        filter: filterSlice
+        filter: filterSlice,
+        users: usersSlice,
+        posts: postsSlice,
     },
-    devTools: process.env.NODE_ENV !== 'production'
+    devTools: true
 })
 
 export default store

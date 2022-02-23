@@ -11,6 +11,7 @@ import {
   capitalize,
 } from "./todosSlice";
 
+
 const TodoListItem = ({ id }) => {
   const todo = useSelector(selectTodosIds(id));
   const dispatch = useDispatch();
