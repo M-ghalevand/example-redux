@@ -18,9 +18,22 @@ const initialState = postAdapter.getInitialState({
 export const { selectById: selectPostById, selectIds: selectPostIds } = postAdapter.getSelectors(state => state.posts)
 
 const postsSlice = createSlice({
-    name: 'users',
+    name: 'posts',
     initialState,
-    reducers: {},
+    reducers: {
+        addReactions: {
+            reducer(state, action) {
+                const { id, reaction, data } = action.payload;
+                state.entities[id] = { ...state.entities[id], reaction, data }
+            },
+            prepare(id, reaction, data) {
+                return {
+                    payload: { id, reaction, data }
+                }
+            }
+        },
+
+    },
     extraReducers: {
         [fetchPosts.pending]: (state) => {
             state.status = 'loading'
@@ -35,5 +48,5 @@ const postsSlice = createSlice({
         }
     }
 })
-// export {} = usersSlice.actions
+export const { addReactions } = postsSlice.actions
 export default postsSlice.reducer

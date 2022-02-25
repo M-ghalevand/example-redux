@@ -1,7 +1,15 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import moment from "moment";
+
 const TimeAge = ({ data }) => {
+  const momentData = moment(data);
+
   return (
-    <span title="2021-02-06T21:36:04.822Z">
-      &nbsp; <i>28 min age</i>
+    <span title={momentData.toString()}>
+      &nbsp; &nbsp;
+      <FontAwesomeIcon icon={faClock} />
+      &nbsp; <i>{momentData.fromNow()}</i>
     </span>
   );
 };

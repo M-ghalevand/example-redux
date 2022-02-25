@@ -17,7 +17,6 @@ const todoSlice = createSlice({
         todoAdded: {
             reducer(state, action) {
                 const todo = action.payload
-                console.log(todo.id);
                 state.entities[todo.id] = todo
             },
             prepare(text) {

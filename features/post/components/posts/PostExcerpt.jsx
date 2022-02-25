@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 
@@ -9,8 +8,8 @@ import TimeAge from "./TimeAge";
 
 const PostExcerpt = ({ postId }) => {
   const post = useSelector((state) => selectPostById(state, postId));
-  const { title, body, userId, id } = post;
-
+  const { title, body, userId, id, data } = post;
+  data = post.data ? post.data : new Date();
   return (
     <div>
       <article className="post-excerpt">
@@ -20,7 +19,7 @@ const PostExcerpt = ({ postId }) => {
           <TimeAge data={data} />
         </div>
         <p className="post-content">{body.substring(0, 70)}....</p>
-        <PostReaction />
+        <PostReaction postId={id} data={data} />
         <Link href={`/post_app/${id}`}>
           <a className="button muted-button" dideo-checked="true">
             View Post
