@@ -9,7 +9,7 @@ const reactionIcons = {
   rocket: "🚀",
   eyes: "👀",
 };
-const PostReaction = ({ postId, data }) => {
+const PostReaction = ({ postId }) => {
   const dispatch = useDispatch();
   const [reactionNumber, setReactionNumber] = useState({
     thumbsUp: 0,
@@ -20,7 +20,7 @@ const PostReaction = ({ postId, data }) => {
   });
 
   useEffect(() => {
-    dispatch(addReactions(postId, reactionNumber, data));
+    dispatch(addReactions(postId, reactionNumber));
   }, [reactionNumber]);
 
   const handlClick = (target, numberTarget) => {

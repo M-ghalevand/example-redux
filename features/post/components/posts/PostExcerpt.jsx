@@ -8,19 +8,19 @@ import TimeAge from "./TimeAge";
 
 const PostExcerpt = ({ postId }) => {
   const post = useSelector((state) => selectPostById(state, postId));
-  const { title, body, userId, id, data } = post;
-  data = post.data ? post.data : new Date();
+  const { title, body, userId, id } = post;
+
   return (
     <div>
       <article className="post-excerpt">
         <h3>{title.substring(0, 20)}...</h3>
         <div>
           <PostAuthor userId={userId} />
-          <TimeAge data={data} />
+          <TimeAge postId={id} />
         </div>
         <p className="post-content">{body.substring(0, 70)}....</p>
-        <PostReaction postId={id} data={data} />
-        <Link href={`/post_app/${id}`}>
+        <PostReaction postId={id} />
+        <Link href={`/post_app/post/${id}`}>
           <a className="button muted-button" dideo-checked="true">
             View Post
           </a>

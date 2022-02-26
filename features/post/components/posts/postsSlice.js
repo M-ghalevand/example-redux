@@ -1,4 +1,4 @@
-import { createAsyncThunk, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createEntityAdapter, createSelector, createSlice } from '@reduxjs/toolkit';
 
 import jsonplaceholder from '../api/jsonplaceholder';
 
@@ -10,12 +10,21 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
 })
 
 
-const postAdapter = createEntityAdapter();
+const postAdapter = createEntityAdapter({
+    sortComparer: (a, b) => b.id - a.id
+});
 const initialState = postAdapter.getInitialState({
     status: 'idle',
 })
 
-export const { selectById: selectPostById, selectIds: selectPostIds } = postAdapter.getSelectors(state => state.posts)
+export const { selectById: selectPostById, selectIds: selectPostIds, selectAll: selectAllPosts } = postAdapter.getSelectors(state => state.posts)
+
+export const seletPostByUser = createSelector(
+    selectAllPosts,
+    (state, userId) => userId,
+
+    (posts, userId) => posts.filter(post => post.userId == userId)
+)
 
 const postsSlice = createSlice({
     name: 'posts',
@@ -32,6 +41,18 @@ const postsSlice = createSlice({
                 }
             }
         },
+        addTime: {
+            reducer(state, action) {
+                const { id, data } = action.payload;
+                state.entities[id] = { ...state.entities[id], data }
+            },
+            prepare(id, data) {
+                return {
+                    payload: { id, data }
+                }
+            }
+        },
+        addNewPost: postAdapter.addOne
 
     },
     extraReducers: {
@@ -48,5 +69,5 @@ const postsSlice = createSlice({
         }
     }
 })
-export const { addReactions } = postsSlice.actions
+export const { addReactions, addTime, addNewPost } = postsSlice.actions
 export default postsSlice.reducer

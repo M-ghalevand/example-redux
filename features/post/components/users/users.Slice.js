@@ -12,7 +12,7 @@ const userAdapter = createEntityAdapter();
 const initialState = userAdapter.getInitialState({
     status: 'idle',
 })
-export const { selectById: selectUsersById, selectIds: selectUsersIds } = userAdapter.getSelectors(state => state.users)
+export const { selectById: selectUsersById, selectAll: selectUserAll } = userAdapter.getSelectors(state => state.users)
 
 
 const usersSlice = createSlice({

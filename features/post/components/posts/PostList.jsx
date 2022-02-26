@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import AddPost from "./AddPost";
 
 import PostExcerpt from "./PostExcerpt";
 import { selectPostIds, fetchPosts } from "./postsSlice";
@@ -36,26 +37,7 @@ const PostList = () => {
 
   return (
     <>
-      <section>
-        <h2>Add a New Post</h2>
-        <form>
-          <label htmlFor="postTitle">Post Title:</label>
-          <input
-            type="text"
-            id="postTitle"
-            name="postTitle"
-            placeholder="What's on your mind?"
-          />
-          <label htmlFor="postAuthor">Author:</label>
-          <select id="postAuthor">
-            <option value=""></option>
-          </select>
-          <label htmlFor="postContent">Content:</label>
-          <textarea id="postContent" name="postContent"></textarea>
-          <button type="button">Save Post</button>
-        </form>
-      </section>
-
+      <AddPost />
       <section className="posts-list">
         <h2>Posts</h2>
         {PostExcerptContent}
