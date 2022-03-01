@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 import { availableColors } from "../filter/filterSlice";
 import {
@@ -10,7 +9,6 @@ import {
   selectTodosIds,
   capitalize,
 } from "./todosSlice";
-
 
 const TodoListItem = ({ id }) => {
   const todo = useSelector(selectTodosIds(id));
@@ -57,8 +55,8 @@ const TodoListItem = ({ id }) => {
             <option value=""></option>
             {colorOptions}
           </select>
-          <button className="destroy" onClick={handelClose}>
-            <FontAwesomeIcon icon={faTrashCan} style={{ fontSize: "1.7rem" }} />
+          <button className="destroy trash" onClick={handelClose}>
+            <DeleteOutlineIcon />
           </button>
         </div>
       </div>

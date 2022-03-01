@@ -1,7 +1,38 @@
-
-
 :root {
   --redux-color: #764abc;
+}
+
+.app-ul {
+  margin: 20px 83px;
+}
+
+.app-ul-li {
+  margin: 10px 0 0 0;
+}
+.app-ul-li a {
+  color: #592f9e;
+  font-weight: 600;
+}
+.app-ul-li a:hover {
+  color: #421786;
+}
+
+.ltr {
+  direction: ltr;
+}
+.bg-withe {
+  background-color: rgb(255, 255, 255);
+}
+.mr-200 {
+  margin-right: 200px;
+}
+@media only screen and (max-width: 767px) {
+  .mr-200 {
+    margin-right: 0;
+  }
+  .mt-50 {
+    margin-top: 50px;
+  }
 }
 
 body {

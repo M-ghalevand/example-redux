@@ -20,7 +20,7 @@ const PostExcerpt = ({ postId }) => {
         </div>
         <p className="post-content">{body.substring(0, 70)}....</p>
         <PostReaction postId={id} />
-        <Link href={`/post_app/post/${id}`}>
+        <Link href={`post_app/post/${id}`}>
           <a className="button muted-button" dideo-checked="true">
             View Post
           </a>

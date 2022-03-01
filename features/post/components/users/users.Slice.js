@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import jsonplaceholder from '../api/jsonplaceholder';
+import jsonplaceholder from '../../../../pages/api/jsonplaceholder';
 
 export const fetchusers = createAsyncThunk('users/fetchusers', async () => {
 

@@ -1,22 +1,20 @@
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar_postApp = () => {
   return (
     <nav>
-      <section>
-        <h1>Redux Essentials Example</h1>
+      <section className="ltr mt-50">
+        <h1>Post App</h1>
         <div className="navContent">
           <div className="navLinks">
-            <Link href="/todo_app">
-              <a dideo-checked="true">Todo App</a>
-            </Link>
-            <Link href="/post_app">
+            <Link href="post_app">
               <a dideo-checked="true">Post App</a>
             </Link>
-            <Link href="/post_app/users">
+            <Link href="post_app/users">
               <a dideo-checked="true">Users</a>
             </Link>
           </div>
+
           <Link href="/">
             <a dideo-checked="true">Home</a>
           </Link>
@@ -26,4 +24,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar_postApp;

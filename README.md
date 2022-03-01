@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+این پروژه با تکنولوژیهای زیر ساخته شده است
 
-## Getting Started
+- next-pwa
+- next
+- react
+- redux toolkit
+- axios
+- moment
+- material UI
+- font awesome
 
-First, run the development server:
 
+
+##    داریم که هر کدام وظیفه خود را دارندstate 4
+
+    Todo App
+
+    state با redux مدیریت شده است که از دو بخش todos و filter تشکلیل .شده است
+        /todos
+            todos/todoAdded: با وارد کردن موضوع و زدن Enter یک dispatch اتفاق می افتد که همراه Actions یک object که id, text, completed دارد.
+            todos/colorChange: با انتخاب یکی از رنگها یک dispatch انجام میشود که همرا Actions یک نام رنگ دارد, این نام رنگ به object مورد نظر اضافه می شود یا تغییر میدهد.
+            todos/todoToggled: با هر بار زدن تیک یا برداشتن یک dispatch انجام میشود که همرا این Action یک false, true دارد, که object مورد نظر را اگر false باشد true میکند یا بلعکس.
+            todos/todoDeleted: که با هربار کلیک کردیک dispatch انجام میشود که همرا object یک id دارد که object مورد نظر پاک میکند.
+            todos/markAllCompleted: باکلیک روی Mark All Completed یک dispatch انجام میشود که همرا Actions چیزی ندارد فقط یک حلقه انجام میشود که تمام object ها completed: true میشود.
+            todos/clearCompleted: با کلیک روی دکمه Clear Completed یک dispatch انجام میشود که همرا خود چیزی ندارد فقط یک حلقه انجام میشود که تمام object ها را پاک می کند.
+        /filter
+            filter/changedColorFilter: با انتخاب یکی از رنگها, یک dispatch انجام میشود همراه Actions یک نام رنگ و یک add, remove دارد که نام این رنگ به فیلتر اضافه می کند.
+            filter/changeStatusFilter: ,با انتخاب یکی از این سه مورد یک dispatch انجام میشودکه همرا Actions یک All, Active, Completed دارد که به فیلتر اضافه میکند.
+
+    Post App
+
+    state با redux مدیریت شده است که دو بخش دارد posts, users تشکیل شده است.
+        /posts
+            post/fetchPosts/fulfilled: با وارد شدن به صفحه post_app یک dispatch انجام میشود که این dispatch با استفاده از middleware reduxTunk است که اطلاعات مورد نیاز post از سایت json placeholder می خواند.
+            posts/addNewPost: با کلیک بروی save post یک dispatch انجام میشود که همرا Action یک object که id, userId, title, body ارسال میشود
+            posts/addReactions: با کلیک بر روی هر یک از reaction یک dispatch انجام میشود که این dispatch یک object که state local هست را همراه Action ارسال میکند و داخل پست مورد نظر اضافه میکند.
+            posts/addTime: که ۲ کار انجام میدهد یکی post که تاریخ ندارند و دیگری با هربار پست save کردن یک dispatch انجام میشود که id , data همرا با Actions ارسال می شود که این تاریخ به id مورد نظر اضافه میکند.
+        /users
+            users/fetchusers/fulfilled:با وارد شدن به صفحه post_app یک dispatch انجام میشود که این dispatch با استفاده از middleware reduxTunk است که اطلاعات مورد نیاز user از سایت json placeholder می خواند.
+
+##install package
 ```bash
-npm run dev
+yarn install
 # or
-yarn dev
+npm install
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+##run project
+```bash
+yarn dev
+# or
+npm run dev
+```

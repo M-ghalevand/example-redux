@@ -7,7 +7,7 @@ const UsersList = () => {
   const users = useSelector(selectUserAll);
   const userList = users.map((user) => (
     <li key={user.id}>
-      <Link href={`/post_app/users/${user.id}`}>
+      <Link href={`users/${user.id}`}>
         <a dideo-checked="true">{user.name}</a>
       </Link>
     </li>
