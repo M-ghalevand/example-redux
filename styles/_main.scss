@@ -1,0 +1,188 @@
+@import "mixins";
+.swiper-slide {
+  .img {
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .img1 {
+    background-image: url("/img/Resalat.jpg");
+  }
+  .img2 {
+    background-image: url("/img/Golstan.jpg");
+  }
+  .img3 {
+    background-image: url("/img/Milad.jpg");
+  }
+  .img4 {
+    background-image: url("/img/tabiat.jpg");
+  }
+}
+@media only screen and (min-width: 961px) {
+  .swiper-slide {
+    .img {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+  }
+}
+@media only screen and (min-width: 200px) and (max-width: 960px) {
+  .swiper-slide {
+    .img {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+  }
+}
+
+// swiper-slide About Page
+.clients {
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background-color: transparent;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+
+      a {
+        margin: 13px;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.7;
+          -webkit-transition: opacity 0.4s ease;
+          -o-transition: opacity 0.4s ease;
+          transition: opacity 0.4s ease;
+          -webkit-filter: invert(100%);
+          filter: invert(100%);
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// global scss
+.site-main {
+  background-color: #2c2d2f;
+  top: 0;
+  left: 0;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+  .pt-page {
+    //width: 85.3%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 200px;
+    transition: 0.4s ease;
+  }
+}
+.section-container {
+  max-width: 1400px;
+  width: 90%;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
+  .page-heading {
+    margin: 50px 0 50px 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    padding: 0 20px 20px 20px;
+    position: relative;
+    span.icon {
+      float: left;
+      line-height: 16px;
+      position: absolute;
+      left: 20px;
+      top: -7px;
+      svg {
+        font-size: 38px;
+        color: $blueThemColor;
+      }
+    }
+    p {
+      font-size: 35.2px;
+      font-weight: 700;
+      line-height: 16px;
+      text-transform: capitalize;
+      position: relative;
+      display: inline-block;
+      color: $blueThemColor;
+    }
+  }
+}
+html,
+body {
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+@include screen("240px", "767px") {
+  #main {
+    right: 0 !important;
+  }
+  .site-main {
+    .pt-page {
+      width: 100% !important;
+      padding-top: 50px;
+      right: 0;
+    }
+  }
+  .XsHidden {
+    right: -100% !important;
+  }
+  .XsBlock {
+    right: 0 !important;
+  }
+}
+@include screen("240px", "444px") {
+  .section-container {
+    .page-heading {
+      p {
+        font-size: 30.4px;
+      }
+    }
+  }
+}
+@include screen("240px", "384px") {
+  .section-container {
+    .page-heading {
+      p {
+        font-size: 27.2px;
+      }
+    }
+  }
+}
+@include screen("240px", "353px") {
+  .section-container {
+    .page-heading {
+      p {
+        font-size: 19.2px;
+      }
+    }
+  }
+}

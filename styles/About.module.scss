@@ -1,0 +1,121 @@
+@import "mixins";
+
+.CustomTabPaneProductDetails {
+  background-color: $greyThemColor;
+  .About {
+    p {
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 2;
+    }
+    p.PParageraph {
+      font-size: 0.9rem;
+    }
+    .AboutInfo {
+      margin-right: 15px;
+      ul {
+        margin-right: -27px;
+        li {
+          line-height: 1em;
+          margin-bottom: 15px;
+          span.Title {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            border-bottom: 2px solid #fff;
+            position: relative;
+            display: inline-block;
+            margin-right: 15px;
+            padding-bottom: 1px;
+            color: #fff;
+          }
+          span.Value {
+            font-size: 16px;
+            margin-right: 10px;
+            a {
+              color: #e1e1e1;
+            }
+          }
+        }
+      }
+      .ResumeButton {
+        margin: 48px auto;
+        .BtnOutlinePrimary {
+          border: 2px solid $blueThemColor;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          background-color: transparent;
+          -webkit-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          font-size: 14px;
+          color: $blueThemColor;
+          font-weight: 700;
+          position: relative;
+          line-height: 100%;
+          overflow: hidden;
+          &:hover {
+            color: #000;
+            background: $blueThemColor;
+          }
+        }
+      }
+    }
+  }
+  .ServiceItem {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    .Icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+      line-height: 1em;
+      color: $blueThemColor;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 14.5px;
+      line-height: 22px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}
+.Subheading {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+  p {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1em;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-bottom: 2px solid $blueThemColor !important;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 5px;
+      background-color: $blueThemColor;
+      bottom: 0;
+      left: 0;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 5px;
+      background-color: $blueThemColor;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

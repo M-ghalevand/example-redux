@@ -1,0 +1,49 @@
+@import "./Bootstrap-rtl.css";
+// @import "./cssrest";
+@import "./fonts-Vazir";
+@import "./main";
+@import "./globals.css";
+@import "./style.css";
+@import "./primitiveui.css";
+a {
+  text-decoration: none !important;
+}
+.trash {
+  margin: -9px 0 auto;
+}
+
+html {
+  background-color: #2c2d2f;
+}
+body {
+  font-family: Vazir, serif !important;
+  direction: rtl;
+  font-size: 100%;
+  // color: #e1e1e1 !important;
+  // background-color: #2c2d2f;
+  #main {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+      color: #fff;
+    }
+  }
+}
+
+@include screen("240px", "767px") {
+  .md-hidden {
+    display: none !important;
+  }
+  .md-block {
+    display: block !important;
+  }
+}
+
+.light {
+  color: #fff;
+}

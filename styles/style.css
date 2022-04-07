@@ -65,11 +65,14 @@ nav {
 
 nav section {
   width: 100%;
+  height: 120px;
 }
 
 nav section h1,
 nav section {
   color: white;
+  margin: 23px auto;
+  position: relative;
 }
 
 /* Main content */

@@ -3,7 +3,7 @@
 }
 
 .app-ul {
-  margin: 20px 83px;
+  margin: 20px 20px 0;
 }
 
 .app-ul-li {
@@ -19,6 +19,9 @@
 
 .ltr {
   direction: ltr;
+}
+.rtl {
+  direction: rtl;
 }
 .bg-withe {
   background-color: rgb(255, 255, 255);
@@ -87,10 +90,15 @@ nav a:hover {
   color: white;
   background: #926bcf;
 }
+.back {
+  margin-left: 4% !important;
+}
 
 .navContent {
   display: flex;
   justify-content: space-between;
+  margin: 30px auto;
+  max-height: 32px;
 }
 
 .navLinks {
@@ -98,7 +106,7 @@ nav a:hover {
 }
 
 .navLinks a {
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 .navLinks a .badge {
@@ -146,9 +154,10 @@ section h1 {
 }
 
 .post-excerpt {
-  padding: 0.25rem 0.25rem;
-  border: 1px solid rgb(177, 174, 174);
+  padding: 0.85rem;
+  border: 1px solid #b1aeae;
   border-radius: 7px;
+  margin: 10px auto;
 }
 
 .posts-list .post-excerpt + .post-excerpt {

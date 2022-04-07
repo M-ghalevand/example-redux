@@ -1,0 +1,179 @@
+@import "mixins";
+.CustomTabPaneProductDetails {
+  background-color: $greyThemColor;
+
+  ul.Education,
+  ul.Experience {
+    margin: 20px -12px 50px;
+    list-style: none;
+    position: relative;
+    padding: 0 0 0 50px;
+    width: 100%;
+    li {
+      position: relative;
+      margin-left: 10px;
+      padding: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      &:not(:first-child) {
+        margin-top: 60px;
+      }
+      span.LineLeft {
+        width: 2px;
+        height: 100%;
+        background-color: $blueThemColor;
+        left: 5px;
+        top: 0;
+        position: absolute;
+        &::before,
+        &::after {
+          content: "";
+          width: 10px;
+          height: 10px;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          border: 2px solid $blueThemColor;
+          position: absolute;
+          left: -4px;
+          top: -10px;
+        }
+        &:after {
+          top: 100%;
+        }
+      }
+    }
+    .Content {
+      margin-left: 10px;
+      p {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        line-height: 26px;
+        margin: 0;
+        text-transform: uppercase;
+      }
+      p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      p.Info {
+        font-size: 16px;
+        margin-bottom: 0;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+      p.TAL {
+        text-align: left;
+      }
+    }
+    span.Year {
+      height: 100%;
+      left: 10px;
+      top: 0;
+      position: absolute;
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        position: absolute;
+        -webkit-transform: translateX(-120%);
+        -ms-transform: translateX(-120%);
+        transform: translateX(-120%);
+        color: #fff;
+      }
+      span.To {
+        top: -18px;
+      }
+      span.From {
+        bottom: -18px;
+      }
+    }
+  }
+  .Skills {
+    margin-bottom: 30px;
+    .SkillItem {
+      padding: 0 20px;
+      .ProgressTitle {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 10px;
+      }
+      .Progress {
+        height: 10px;
+        background-color: #404144;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 20px;
+        border-radius: 5px 0 0 5px;
+        overflow: visible;
+        .ProgressBar {
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          position: relative;
+          background-color: $blueThemColor;
+          width: 0;
+          height: 100%;
+          border-radius: 5px 0 0 5px;
+          -webkit-transition: all 2s ease-out;
+          -o-transition: all 2s ease-out;
+          transition: all 2s ease-out;
+          overflow: initial;
+          &::after {
+            content: "";
+            display: block;
+            border-bottom: 21px solid transparent;
+            position: absolute;
+            top: -26px;
+            left: -12px;
+            border-bottom-color: $blueThemColor;
+          }
+          .ProgressValue {
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            position: absolute;
+            top: -30px;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.Subheading {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+  p {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1em;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-bottom: 2px solid $blueThemColor !important;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 5px;
+      background-color: $blueThemColor;
+      bottom: 0;
+      left: 0;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 5px;
+      background-color: $blueThemColor;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

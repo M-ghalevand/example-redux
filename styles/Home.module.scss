@@ -1,0 +1,290 @@
+@import "mixins";
+.CustomTabPaneProductDetails {
+  background-color: $greyThemColor;
+  height: 100vh;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #181818;
+    opacity: 0.5;
+    z-index: 3;
+  }
+  .Slideshows {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .BannerContent {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    display: block;
+    z-index: 5;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    p {
+      font-weight: 900;
+      direction: ltr;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 3.2px;
+      font-size: 40px;
+      color: #fff;
+
+      span {
+        text-decoration: none;
+        color: $blueThemColor !important;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+    }
+
+    div.Skil {
+      font-size: 28px;
+      direction: ltr;
+      left: -78px;
+      margin-top: 16px;
+      display: block;
+      span {
+        position: absolute;
+        left: 50%;
+        top: 63px;
+        transform: translateX(-173%);
+      }
+      .CdWordsWrapper {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        position: absolute;
+        height: 53px;
+        width: 243px;
+        top: 56px;
+        left: 47.2%;
+        overflow: hidden;
+        animation: widtb 3s infinite;
+        @keyframes widtb {
+          0% {
+            width: 0;
+          }
+          3% {
+            width: 0;
+          }
+          60% {
+            width: 243px;
+          }
+          93% {
+            width: 0;
+          }
+          100% {
+            width: 0;
+          }
+        }
+        div {
+          min-height: 40px;
+          position: absolute;
+          top: 50px;
+          b {
+            display: inline;
+            width: 100%;
+            margin-top: 15px;
+            position: absolute;
+            top: -7px;
+            //line-height:1.1;
+            font-weight: 700;
+            border-bottom: 2px solid $blueThemColor;
+          }
+        }
+        div.Graphics {
+          width: 245px;
+          animation: Graphics 12s infinite;
+          @keyframes Graphics {
+            1% {
+              top: 0;
+            }
+            25% {
+              top: 0;
+            }
+            26% {
+              top: 50px;
+            }
+            100% {
+              top: 50px;
+            }
+          }
+        }
+        div.Freelancer {
+          width: 135px;
+          animation: Freelancer 12s infinite;
+          @keyframes Freelancer {
+            1% {
+              top: 50px;
+            }
+            25% {
+              top: 50px;
+            }
+            26% {
+              top: 0;
+            }
+            50% {
+              top: 0;
+            }
+            51% {
+              top: 50px;
+            }
+            100% {
+              top: 50px;
+            }
+          }
+        }
+        div.Web {
+          width: 201px;
+          animation: Web 12s infinite;
+          @keyframes Web {
+            1% {
+              top: 50px;
+            }
+            50% {
+              top: 50px;
+            }
+            51% {
+              top: 0;
+            }
+            75% {
+              top: 0;
+            }
+            76% {
+              top: 50px;
+            }
+            100% {
+              top: 50px;
+            }
+          }
+        }
+        div.FrontEnd {
+          width: 132px;
+          animation: Front-End 12s infinite;
+          @keyframes Front-End {
+            1% {
+              top: 50px;
+            }
+            75% {
+              top: 50px;
+            }
+            76% {
+              top: 0;
+            }
+            100% {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include screen("2650px", "5000px") {
+  .BannerContent {
+    p {
+      padding: 3.57px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 49% !important;
+      }
+    }
+  }
+}
+@include screen("1530px", "2649px") {
+  .BannerContent {
+    p {
+      padding: 3.57px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 48% !important;
+      }
+    }
+  }
+}
+@include screen("437px", "800px") {
+  .BannerContent {
+    p {
+      font-size: 27px !important;
+      padding: 10.4px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 43.4% !important;
+      }
+    }
+  }
+}
+@include screen("400px", "436px") {
+  .BannerContent {
+    p {
+      font-size: 26.5px !important;
+      padding: 10.4px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 38.7% !important;
+      }
+    }
+  }
+}
+@include screen("337px", "399px") {
+  .BannerContent {
+    p {
+      font-size: 25.5px !important;
+      text-transform: inherit !important;
+      padding: 10.4px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 36.3% !important;
+      }
+    }
+  }
+}
+@include screen("300px", "336px") {
+  .BannerContent {
+    p {
+      font-size: 22.4px !important;
+      text-transform: inherit !important;
+      padding: 12.8px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 36.3% !important;
+      }
+    }
+  }
+}
+@include screen("240px", "299px") {
+  .BannerContent {
+    p {
+      font-size: 20.8px !important;
+      text-transform: inherit !important;
+      padding: 13.6px !important;
+    }
+    div.Skil {
+      .CdWordsWrapper {
+        left: 34.3% !important;
+      }
+    }
+  }
+}

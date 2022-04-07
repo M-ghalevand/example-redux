@@ -1,0 +1,9 @@
+$blueThemColor: #00a3e1;
+$greyThemColor: #2c2d2f;
+$greyBorderColor: #17181b;
+$greyColorContent: #909090;
+@mixin screen($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

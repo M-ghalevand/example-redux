@@ -1,9 +1,7 @@
 import { Provider } from 'react-redux';
 
-import store from '../pages/api/store' ;
-import '../styles/globals.css';
-import '../styles/style.css';
-import '../styles/primitiveui.css';
+import store from '../services/store';
+import '../styles/App.scss';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
