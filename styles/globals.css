@@ -18,10 +18,10 @@
 }
 
 .ltr {
-  direction: ltr;
+  direction: ltr!important;
 }
 .rtl {
-  direction: rtl;
+  direction: rtl!important;
 }
 .bg-withe {
   background-color: rgb(255, 255, 255);

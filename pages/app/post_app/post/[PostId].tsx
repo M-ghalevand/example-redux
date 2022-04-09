@@ -1,14 +1,14 @@
-import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 import {
+  EditPost,
   PostAuthor,
   PostReaction,
   TimeAge,
 } from "../../../../components/post_app";
-import { Navba_postApp_user, Nav } from "../../../../components/SiteMe";
+import { Nav, Navba_postApp_user } from "../../../../components/SiteMe";
 import { selectPostById } from "../../../../components/post_app/postsSlice";
 import jsonplaceholder from "../../../../services/jsonplaceholder";
 
@@ -73,11 +73,7 @@ const PostId = ({ data }) => {
             </div>
             <p className="post-content">{body}</p>
             <PostReaction postId={id} reaction={reactions} />
-            <Link href={`${id}`}>
-              <a className="button" dideo-checked="true">
-                Edit Post
-              </a>
-            </Link>
+            <EditPost title={title} body={body} id={id} />
           </article>
         </section>
       </div>

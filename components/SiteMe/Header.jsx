@@ -5,7 +5,7 @@ export default function Header({ title }) {
     <div>
       <Head>
         <title>Manouchehr Ghalevand</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta name="theme-color" content="#00a3e1" />
         <meta name="Background-color" content="#2c2d2f" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

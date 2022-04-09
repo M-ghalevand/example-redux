@@ -48,6 +48,22 @@ const postsSlice = createSlice({
         };
       },
     },
+    editPost: {
+      reducer(state, action) {
+        const { id, title, body, data } = action.payload;
+        state.entities[id] = { ...state.entities[id], title, body, data };
+      },
+      prepare(post) {
+        return {
+          payload: {
+            id: post.id,
+            title: post.editTitle,
+            body: post.editBody,
+            data: post.data,
+          },
+        };
+      },
+    },
     addNewPost: postAdapter.addOne,
   },
   extraReducers: {
@@ -64,5 +80,5 @@ const postsSlice = createSlice({
     },
   },
 });
-export const { addReactions, addNewPost } = postsSlice.actions;
+export const { addReactions, editPost, addNewPost } = postsSlice.actions;
 export default postsSlice.reducer;

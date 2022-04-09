@@ -67,7 +67,9 @@ const AddPost = () => {
         />
         <label htmlFor="postAuthor">Author:</label>
         <select id="postAuthor" value={userId} onChange={onChangeAuthor}>
-          <option value="" onChange={() => setUserId("")} />
+          <option value="" onChange={() => setUserId("")} disabled>
+            Please select an author
+          </option>
           {usersOption}
         </select>
         <label htmlFor="postContent">Content:</label>

@@ -5,3 +5,4 @@ export { default as PostList } from "./PostList";
 export { default as PostReaction } from "./PostReaction";
 export { default as TimeAge } from "./TimeAge";
 export { default as UsersList } from "./UsersList";
+export { default as EditPost } from "./EditPost";
