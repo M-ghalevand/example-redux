@@ -5,8 +5,10 @@ import { clearCompleted, markAllCompleted } from "./todosSlice";
 const Actions = () => {
   const dispatch = useDispatch();
 
+  // @ts-ignore
   const handlMarkAllCompleted = () => dispatch(markAllCompleted());
 
+  // @ts-ignore
   const handlClearCompleted = () => dispatch(clearCompleted());
   return (
     <div className="actions">

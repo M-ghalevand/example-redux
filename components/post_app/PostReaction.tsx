@@ -23,7 +23,14 @@ const PostReaction = ({ postId, reaction }) => {
   const handlClick = async (target, numberTarget) => {
     setReactionNumber({ ...reactionNumber, [target]: (numberTarget += 1) });
     dispatch(
-      addReactions(postId, { ...reactionNumber, [target]: numberTarget }, data)
+      addReactions({
+        id: postId,
+        reaction: {
+          ...reactionNumber,
+          [target]: numberTarget,
+        },
+        data,
+      })
     );
   };
 

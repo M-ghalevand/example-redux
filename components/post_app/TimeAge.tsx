@@ -9,6 +9,7 @@ const TimeAge = ({ postId }) => {
   const post1: { data: string } = useSelector((state) =>
     selectPostById(state, postId)
   );
+
   let data: string = JSON.stringify(new Date());
   if (post1) {
     if (typeof post1.data === "string") {

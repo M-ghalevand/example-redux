@@ -14,7 +14,7 @@ const StatusFilter = () => {
     dispatch(changeStatusFilter(status));
   };
   const renderedFilters = Object.keys(StatusFilters).map((key) => {
-    const value = StatusFilters[key];
+    const value: string = StatusFilters[key];
     const className = value === status ? "selected" : "";
 
     return (

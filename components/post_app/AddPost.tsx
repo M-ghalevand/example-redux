@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { selectUserAll } from "./users.Slice";
 import { addNewPost, addReactions } from "./postsSlice";
+import { Button } from "@mui/material";
 
 let id = 100;
 
@@ -28,7 +29,7 @@ const AddPost = () => {
   const canSave = () => {
     return [title, userId, body].every(Boolean);
   };
-  let reactions: {
+  let reaction: {
     thumbsUp: number;
     heart: number;
     hooray: number;
@@ -43,10 +44,10 @@ const AddPost = () => {
   };
   const onSave = () => {
     const data: string = JSON.stringify(new Date());
+
     id++;
     dispatch(addNewPost({ id, userId, title, body }));
-    // @ts-ignore
-    dispatch(addReactions(id, reactions, data));
+    dispatch(addReactions({ id, reaction, data }));
     setTitle("");
     setUserId("");
     setBody("");
@@ -80,9 +81,17 @@ const AddPost = () => {
           name="postContent"
           placeholder="What's on your Content?"
         />
-        <button type="button" disabled={!canSave()} onClick={onSave}>
+        <Button
+          className="mt-2"
+          variant="contained"
+          disabled={!canSave()}
+          onClick={onSave}
+        >
           Save Post
-        </button>
+        </Button>
+        {/*<button type="button" disabled={!canSave()} >*/}
+
+        {/*</button>*/}
       </form>
     </section>
   );

@@ -1,4 +1,4 @@
-import { ColorFilters, StatusFilter, RemainingTodos, Actions } from "./";
+import { Actions, ColorFilters, RemainingTodos, StatusFilter } from "./";
 
 const Footer = () => {
   return (

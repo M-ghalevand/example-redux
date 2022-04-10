@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import { PostAuthor, PostReaction, TimeAge } from "./";
 import { selectPostById } from "./postsSlice";
+import { Button } from "@mui/material";
 
 const PostExcerpt = ({ postId }) => {
   const post = useSelector((state) => selectPostById(state, postId));
@@ -27,8 +28,10 @@ const PostExcerpt = ({ postId }) => {
         <p className="post-content">{body.substring(0, 70)}....</p>
         <PostReaction postId={id} reaction={reactions} />
         <Link href={`post_app/post/${id}`}>
-          <a className="button muted-button" dideo-checked="true">
-            Viwe Post
+          <a>
+            <Button variant="contained" className="mt-2">
+              View Post
+            </Button>
           </a>
         </Link>
       </article>

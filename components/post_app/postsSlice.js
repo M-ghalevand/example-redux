@@ -42,9 +42,13 @@ const postsSlice = createSlice({
         const { id, reaction, data } = action.payload;
         state.entities[id] = { ...state.entities[id], reaction, data };
       },
-      prepare(id, reaction, data) {
+      prepare(reaction) {
         return {
-          payload: { id, reaction, data },
+          payload: {
+            id: reaction.id,
+            reaction: reaction.reaction,
+            data: reaction.data,
+          },
         };
       },
     },

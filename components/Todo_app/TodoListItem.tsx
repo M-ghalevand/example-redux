@@ -30,6 +30,7 @@ const TodoListItem = ({ id }) => {
   };
 
   const handelChangColor = (e) => {
+    // @ts-ignore
     dispatch(colorChange(todo.id, e.target.value));
   };
 
@@ -52,7 +53,7 @@ const TodoListItem = ({ id }) => {
             style={{ color }}
             onChange={handelChangColor}
           >
-            <option value=""></option>
+            <option value="" />
             {colorOptions}
           </select>
           <button className="destroy trash" onClick={handelClose}>

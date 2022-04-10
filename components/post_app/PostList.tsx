@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { PostExcerpt, AddPost } from "./";
-import { selectPostIds, fetchPosts } from "./postsSlice";
+import { AddPost, PostExcerpt } from "./";
+import { fetchPosts, selectPostIds } from "./postsSlice";
 
 const PostList = () => {
   const dispatch = useDispatch();
 
   const postId = useSelector(selectPostIds);
+  // @ts-ignore
   const status = useSelector((state) => state.posts.status);
 
   useEffect(() => {

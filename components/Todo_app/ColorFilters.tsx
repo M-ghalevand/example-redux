@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import {
+  availableColors,
   changedColorFilter,
   selectColorsFilter,
-  availableColors,
 } from "./filterSlice";
 
 const ColorFilters = () => {
@@ -11,7 +11,7 @@ const ColorFilters = () => {
   const colors = useSelector(selectColorsFilter);
 
   const handlChangeColor = (color, changType) => {
-    dispatch(changedColorFilter(color, changType));
+    dispatch(changedColorFilter({ color, changType }));
   };
   const renderedColors = availableColors.map((color) => {
     const checked = colors.includes(color);
@@ -30,7 +30,9 @@ const ColorFilters = () => {
           style={{
             backgroundColor: color,
           }}
-        ></span>
+        >
+          {""}
+        </span>
         {color}
       </label>
     );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Button, Modal, TextField } from "@mui/material";
+import { Box, Button, Modal, Stack, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { editPost } from "./postsSlice";
 
@@ -38,7 +38,10 @@ const EditPost = ({ title, body, id }) => {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Edit Post</Button>
+      <Button variant="contained" onClick={handleOpen} className="my-2">
+        Edit Post
+      </Button>
+
       <Modal
         component="form"
         open={open}
@@ -56,25 +59,34 @@ const EditPost = ({ title, body, id }) => {
             defaultValue={editTitle}
             onChange={(e) => setEditTitle(e.target.value)}
           />
-          <div className="my-3"></div>
           <TextField
             fullWidth
             id="outlined-multiline-static1"
             label="Body"
+            className="my-3"
             multiline
             rows={4}
             defaultValue={editBody}
             onChange={(e) => setEditBody(e.target.value)}
           />
-          <div className="my-3"></div>
-          <Button
-            variant="outlined"
-            color="secondary"
-            disabled={!status}
-            onClick={handelSave}
-          >
-            Save Post
-          </Button>
+          <Stack direction="row" spacing={2}>
+            <Button
+              variant="contained"
+              color="success"
+              disabled={!status}
+              onClick={handelSave}
+              className="mx-2"
+            >
+              Save Post
+            </Button>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={() => setOpen(false)}
+            >
+              Close
+            </Button>
+          </Stack>
         </Box>
       </Modal>
     </div>

@@ -11,7 +11,6 @@ const UserId = ({ user }) => {
   const userId: number = parseInt(useRouter().query.UserId as string);
   // @ts-ignore
   const userPost: [] = useSelector((state) => seletPostByUser(state, userId));
-  console.log(userPost);
   const postLink = userPost.map(({ id, title }) => (
     <li key={id}>
       <Link href={`/app/post_app/post/${id}`}>

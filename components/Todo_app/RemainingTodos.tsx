@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 import { todoListRemaining } from "./todosSlice";
 
 const RemainingTodos = () => {
-  const count = useSelector(todoListRemaining);
-
+  const count: number = useSelector(todoListRemaining);
   const suffix = count === 1 ? "" : "s";
 
   return (

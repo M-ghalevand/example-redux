@@ -30,11 +30,11 @@ const filterSlice = createSlice({
             break;
         }
       },
-      prepare(color, changType) {
+      prepare(filter) {
         return {
           payload: {
-            color,
-            changType,
+            color: filter.color,
+            changType: filter.changType,
           },
         };
       },
