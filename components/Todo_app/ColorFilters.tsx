@@ -41,7 +41,7 @@ const ColorFilters = () => {
   return (
     <div className="filters colorFilters">
       <h5>Filter by Color</h5>
-      <form className="colorSelection">{renderedColors}</form>
+      <form className="colorSelection flex flex-col">{renderedColors}</form>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { Button } from "@mui/material/";
 
 import { clearCompleted, markAllCompleted } from "./todosSlice";
 
@@ -13,12 +14,22 @@ const Actions = () => {
   return (
     <div className="actions">
       <h5>Actions</h5>
-      <button className="button" onClick={handlMarkAllCompleted}>
+      <Button
+        variant="contained"
+        className="bg-sky-900 font-bold ml-2"
+        color="info"
+        onClick={handlMarkAllCompleted}
+      >
         Mark All Completed
-      </button>
-      <button className="button" onClick={handlClearCompleted}>
+      </Button>
+      <Button
+        variant="contained"
+        className="bg-sky-900 font-bold ml-2"
+        color="info"
+        onClick={handlClearCompleted}
+      >
         Clear Completed
-      </button>
+      </Button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { Footer, TodoList, Header } from "../../components/Todo_app";
-import { Navbar_todoApp, Nav } from "../../components/SiteMe";
+import { Navbar_todoApp, Nav } from "../../components/siteMe";
 
 const todoApp = () => {
   return (
@@ -13,8 +13,7 @@ const todoApp = () => {
       <div className="mr-200">
         <Navbar_todoApp />
         <main>
-          <section className="medium-container ltr">
-            <h2>Todos</h2>
+          <section className=" w-9/12 medium-container ltr md:mr-56 my-10 sm:mx-auto">
             <div className="todoapp">
               <Header />
               <TodoList />

@@ -5,10 +5,10 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 
-import jsonplaceholder from "../../services/jsonplaceholder";
+import {post} from "../../services/url";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const response = await jsonplaceholder.get("/posts");
+  const response = await post.get("/posts");
 
   return response.data;
 });

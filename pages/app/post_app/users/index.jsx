@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Navba_postApp_user, Nav } from "../../../../components/SiteMe";
+import { Navba_postApp_user, Nav } from "../../../../components/siteMe";
 import { UsersList } from "../../../../components/post_app";
 
 const index = () => {
@@ -10,7 +10,7 @@ const index = () => {
         <title>Users</title>
       </Head>
       <Nav app="active" />
-      <div className="ltr mr-200">
+      <div className="ltr mr-200 ">
         <Navba_postApp_user />
         <UsersList />
       </div>

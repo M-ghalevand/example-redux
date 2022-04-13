@@ -16,7 +16,7 @@ const TodoListItem = ({ id }) => {
   const { text, completed, color } = todo;
 
   const colorOptions = availableColors.map((c) => (
-    <option key={c} value={c}>
+    <option key={c} value={c} className="text-sm">
       {capitalize(c)}
     </option>
   ));
@@ -48,12 +48,13 @@ const TodoListItem = ({ id }) => {
         </div>
         <div className="segment buttons">
           <select
-            className="colorPicker"
+            className="colorPicker text-sm"
             defaultValue={color}
             style={{ color }}
             onChange={handelChangColor}
           >
             <option value="" />
+
             {colorOptions}
           </select>
           <button className="destroy trash" onClick={handelClose}>

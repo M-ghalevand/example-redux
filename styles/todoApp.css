@@ -1,106 +1,5 @@
-:root {
-  --redux-color: #764abc;
-}
 
-html {
-  height: 100%;
-}
 
-body {
-  height: 100vh;
-  min-height: 100vh;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-div#root {
-  height: 100%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-p {
-  font-size: 1.1rem;
-}
-
-button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  font-size: 100%;
-  vertical-align: baseline;
-  font-family: inherit;
-  font-weight: inherit;
-  color: inherit;
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Navbar */
-
-.App {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-nav {
-  display: flex;
-  padding: 0;
-  background: var(--redux-color);
-}
-
-nav section {
-  width: 100%;
-  height: 120px;
-}
-
-nav section h1,
-nav section {
-  color: white;
-  margin: 23px auto;
-  position: relative;
-}
-
-/* Main content */
-
-section {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
-}
-
-section h1 {
-  font-size: 3rem;
-}
-
-.button {
-  display: inline-block;
-  background: #1976d2;
-  color: white;
-  border-radius: 4px;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
-}
-
-button:disabled,
-button:disabled:hover {
-  opacity: 0.5;
-}
 
 /* https://projects.lukehaas.me/css-loaders/ , Loader #3 */
 .loader {
@@ -195,36 +94,7 @@ button:disabled:hover {
 
 /* TodoMVC TodooApp CSS */
 
-main {
-  background: #f5f5f5;
-  color: #111111;
-  min-width: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 2;
-}
 
-main h1,
-main h2 {
-  width: 100%;
-  font-size: 50px;
-  font-weight: 200;
-  text-align: center;
-  color: #b83f45;
-  margin-top: 0;
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
-}
-
-:focus {
-  outline: 0;
-}
-
-.hidden {
-  display: none;
-}
 
 .todoapp {
   min-width: inherit;
@@ -248,25 +118,6 @@ main h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.todoapp header.header .loader {
-  width: 2em;
-  height: 2em;
-  margin: 0 20px 0 0;
-}
-
-.todoapp h1 {
-  position: absolute;
-  top: -140px;
-  width: 100%;
-  font-size: 80px;
-  font-weight: 200;
-  text-align: center;
-  color: #b83f45;
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
 }
 
 .new-todo,
@@ -294,11 +145,6 @@ main h2 {
   box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
 }
 
-.main {
-  position: relative;
-  z-index: 2;
-  border-top: 1px solid #e6e6e6;
-}
 
 .todoapp section.todo-list {
   margin: 0;
@@ -524,27 +370,6 @@ ul.todo-list {
   margin-right: 5px;
 }
 
-.info {
-  margin: 65px auto 0;
-  color: #4d4d4d;
-  font-size: 11px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  text-align: center;
-}
-
-.info p {
-  line-height: 1;
-}
-
-.info a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.info a:hover {
-  text-decoration: underline;
-}
 
 /*
 	Hack to remove background from Mobile Safari.
@@ -583,10 +408,3 @@ ul.todo-list {
   }
 }
 
-form.colorSelection label {
-  margin: 0;
-}
-
-form.colorSelection input[type="checkbox"] {
-  margin-right: 5px;
-}

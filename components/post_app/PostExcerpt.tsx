@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
 
 import { PostAuthor, PostReaction, TimeAge } from "./";
 import { selectPostById } from "./postsSlice";
-import { Button } from "@mui/material";
+
 
 const PostExcerpt = ({ postId }) => {
   const post = useSelector((state) => selectPostById(state, postId));
@@ -19,19 +20,23 @@ const PostExcerpt = ({ postId }) => {
       };
   return (
     <div>
-      <article className="post-excerpt">
-        <h3>{title.substring(0, 20)}...</h3>
+      <article className="mx-auto w-fit my-10 px-10 text-gray-600 border-2 rounded-lg">
+        <h3 className="text-3xl font-black mt-4">{title.substring(0, 20)}...</h3>
         <div>
           <PostAuthor userId={userId} />
           <TimeAge postId={id} />
         </div>
-        <p className="post-content">{body.substring(0, 70)}....</p>
+        <p className="post-content text-xl font-bold">{body.substring(0, 70)}....</p>
         <PostReaction postId={id} reaction={reactions} />
         <Link href={`post_app/post/${id}`}>
           <a>
-            <Button variant="contained" className="mt-2">
-              View Post
-            </Button>
+              <Button
+                  variant="contained"
+                  className="bg-sky-900 font-bold my-4"
+                  color="info"
+              >
+                  View Post
+              </Button>
           </a>
         </Link>
       </article>

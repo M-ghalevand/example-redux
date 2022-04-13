@@ -1,40 +1,40 @@
 import {
-  createSlice,
-  createAsyncThunk,
-  createEntityAdapter,
+    createSlice,
+    createAsyncThunk,
+    createEntityAdapter,
 } from "@reduxjs/toolkit";
-import jsonplaceholder from "../../services/jsonplaceholder";
+import {post} from "../../services/url";
 
 export const fetchusers = createAsyncThunk("index/fetchusers", async () => {
-  const response = await jsonplaceholder.get("/users");
+    const response = await post.get("/users");
 
-  return response.data;
+    return response.data;
 });
 
 const userAdapter = createEntityAdapter();
 const initialState = userAdapter.getInitialState({
-  status: "idle",
+    status: "idle",
 });
-export const { selectById: selectUsersById, selectAll: selectUserAll } =
-  userAdapter.getSelectors((state) => state.users);
+export const {selectById: selectUsersById, selectAll: selectUserAll} =
+    userAdapter.getSelectors((state) => state.users);
 
 const usersSlice = createSlice({
-  name: "users",
-  initialState,
-  reducers: {},
-  extraReducers: {
-    [fetchusers.pending]: (state) => {
-      state.status = "loading";
+    name: "users",
+    initialState,
+    reducers: {},
+    extraReducers: {
+        [fetchusers.pending]: (state) => {
+            state.status = "loading";
+        },
+        [fetchusers.fulfilled]: (state, action) => {
+            userAdapter.upsertMany(state, action.payload);
+            state.status = "idle";
+        },
+        [fetchusers.rejected]: (state, action) => {
+            state.status = "error";
+            console.log(action.payload);
+        },
     },
-    [fetchusers.fulfilled]: (state, action) => {
-      userAdapter.upsertMany(state, action.payload);
-      state.status = "idle";
-    },
-    [fetchusers.rejected]: (state, action) => {
-      state.status = "error";
-      console.log(action.payload);
-    },
-  },
 });
 // export {} = usersSlice.actions
 export default usersSlice.reducer;

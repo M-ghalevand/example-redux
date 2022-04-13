@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Button } from "@mui/material/";
+
 import {
   changeStatusFilter,
   selectStatusFilter,
@@ -19,9 +21,14 @@ const StatusFilter = () => {
 
     return (
       <li key={value}>
-        <button className={className} onClick={() => handlChangeStatus(value)}>
+        <Button
+          variant="outlined"
+          onClick={() => handlChangeStatus(value)}
+          size="small"
+          className="font-bold"
+        >
           {key}
-        </button>
+        </Button>
       </li>
     );
   });

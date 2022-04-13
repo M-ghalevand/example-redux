@@ -5,3 +5,4 @@ export { default as Navbar_app } from "./Navbar_app";
 export { default as Navbar_postApp } from "./Navbar_postApp";
 export { default as Navbar_todoApp } from "./Navbar_todoApp";
 export { default as Preloader } from "./Preloader";
+export { default as Navbar_weatherApp } from "./Navbar_weatherApp";

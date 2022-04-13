@@ -20,7 +20,7 @@ const TimeAge = ({ postId }) => {
   const momentData = moment(newData);
 
   return (
-    <span title={"Time Post"}>
+    <span title={"Time Post"} className="text-lg">
       &nbsp; &nbsp;
       <FontAwesomeIcon icon={faClock} />
       &nbsp; <i>{momentData.fromNow()}</i>

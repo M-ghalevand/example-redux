@@ -38,7 +38,12 @@ const EditPost = ({ title, body, id }) => {
 
   return (
     <div>
-      <Button variant="contained" onClick={handleOpen} className="my-2">
+      <Button
+          variant="contained"
+          className="bg-sky-900 font-bold my-2"
+          color="info"
+          onClick={handleOpen}
+      >
         Edit Post
       </Button>
 
@@ -72,7 +77,7 @@ const EditPost = ({ title, body, id }) => {
           <Stack direction="row" spacing={2}>
             <Button
               variant="contained"
-              color="success"
+              style={{backgroundColor:"#06b955"}}
               disabled={!status}
               onClick={handelSave}
               className="mx-2"
@@ -80,8 +85,9 @@ const EditPost = ({ title, body, id }) => {
               Save Post
             </Button>
             <Button
+                style={{backgroundColor:"red"}}
               variant="contained"
-              color="error"
+
               onClick={() => setOpen(false)}
             >
               Close

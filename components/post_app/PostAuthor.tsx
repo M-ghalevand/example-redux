@@ -8,7 +8,7 @@ const PostAuthor = ({ userId }) => {
   let user;
   if (Author) {
     user = (
-      <span>
+      <span className="text-lg ">
         by name:&nbsp;&nbsp;
         <Link href={`/app/post_app/users/${Author.id}`}>
           <a>{Author.name} </a>

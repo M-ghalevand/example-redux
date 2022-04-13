@@ -1,16 +1,8 @@
-@import "./Bootstrap-rtl.css";
-// @import "./cssrest";
+// @import "./Bootstrap-rtl.css"; 
 @import "./fonts-Vazir";
 @import "./main";
-@import "./globals.css";
-@import "./style.css";
-@import "./primitiveui.css";
-a {
-  text-decoration: none !important;
-}
-.trash {
-  margin: -9px 0 auto;
-}
+@import "./todoApp.css";
+@import "loders.css";
 
 html {
   background-color: #2c2d2f;
@@ -33,6 +25,12 @@ body {
       color: #fff;
     }
   }
+}
+.ltr{
+  direction: ltr;
+}
+.rtl {
+  direction: rtl;
 }
 
 @include screen("240px", "767px") {

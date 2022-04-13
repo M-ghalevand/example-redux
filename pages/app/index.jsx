@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Navbar_app, Nav } from "../../components/SiteMe";
+import { Navbar_app, Nav } from "../../components/siteMe";
 
 const Home = () => {
   return (
@@ -9,20 +9,20 @@ const Home = () => {
         <title>Example react,redux-toolkit,next</title>
       </Head>
       <Nav app="active" />
-      <div className="mr-200 bg-light text-body">
+      <div className="bg-light text-body">
         <Navbar_app />
-        <div>
-          <ul className="app-ul rtl">
-            <li className="app-ul-li">
-              <p className="fw-bolder">Todo App</p>
+        <div className="md:mr-52 ml-4 sm:mr-4 my-10">
+          <ul className="app-ul rtl text-white mr-5">
+            <li className="app-ul-li ">
+              <p className=" text-sky-500 font-black">Todo Appsss</p>
               <p>
                 state با redux مدیریت شده است که از دو بخش todos و filter تشکلیل
                 .شده است
               </p>
-              <ul>
+              <ul className="mr-5">
                 <li>
                   /todos
-                  <ul>
+                  <ul className="mr-5">
                     <li>
                       todos/todoAdded: با وارد کردن موضوع و زدن Enter یک
                       dispatch اتفاق می افتد که همراه Actions یک object که id,
@@ -58,7 +58,7 @@ const Home = () => {
                 </li>
                 <li>
                   /filter
-                  <ul>
+                  <ul className="mr-5">
                     <li>
                       filter/changedColorFilter: با انتخاب یکی از رنگها, یک
                       dispatch انجام میشود همراه Actions یک نام رنگ و یک add,
@@ -75,15 +75,15 @@ const Home = () => {
             </li>
 
             <li className="app-ul-li">
-              <p className="fw-bolder">Post App</p>
+              <p className=" text-sky-500 font-black">Post App</p>
               <p>
                 state با redux مدیریت شده است که دو بخش دارد posts, users تشکیل
                 شده است.
               </p>
-              <ul>
+              <ul className="mr-5">
                 <li>
                   /posts
-                  <ul>
+                  <ul className="mr-5">
                     <li>
                       post/fetchPosts/fulfilled: با وارد شدن به صفحه post_app یک
                       dispatch انجام میشود که این dispatch با استفاده از
@@ -111,7 +111,7 @@ const Home = () => {
                 </li>
                 <li>
                   /users
-                  <ul>
+                  <ul className="mr-5">
                     <li>
                       users/fetchusers/fulfilled:با وارد شدن به صفحه post_app یک
                       dispatch انجام میشود که این dispatch با استفاده از

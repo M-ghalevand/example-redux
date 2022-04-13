@@ -186,3 +186,16 @@ body {
     }
   }
 }
+
+.full-height{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  .full-image{
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("/img/white-nimbus-clouds.jpg");
+    background-size: cover;
+  }
+}
