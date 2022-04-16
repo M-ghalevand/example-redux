@@ -1,29 +1,29 @@
 import Head from "next/head";
-import { Nav, Navbar_weatherApp } from "../../components/siteMe";
-import { WeatherList } from "../../components/weather_app";
+import {Nav, Navbar_weatherApp} from "../../components/siteMe";
+import {WeatherList} from "../../components/weather_app";
 
 const WeatherApp = () => {
-  return (
-    <>
-      <Head>
-        <title>Todo App</title>
-      </Head>
-      <Nav
-        app="active"
-        nav={undefined}
-        about={undefined}
-        resume={undefined}
-        blog={undefined}
-        conteact={undefined}
-      />
-      <div className="mr-200 full-height">
-        <Navbar_weatherApp />
-        <div className="full-image img">
-          <WeatherList />
-        </div>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Head>
+                <title>Todo App</title>
+            </Head>
+            <Nav
+                app="active"
+                nav={undefined}
+                about={undefined}
+                resume={undefined}
+                blog={undefined}
+                conteact={undefined}
+            />
+            <div className="mr-200 min-h-screen	">
+                <Navbar_weatherApp/>
+                <section className="bg-white min-w-min min-h-screen text-gray-600 ltr">
+                    <WeatherList/>
+                </section>
+            </div>
+        </>
+    );
 };
 
 export default WeatherApp;

@@ -14,7 +14,8 @@ const UsersList = () => {
   ));
   return (
     <section className="bg-white min-h-screen ">
-      <div className="ml-32 pt-5">
+
+      <div className="text-4xl font-bold mx-auto w-fit p-10 text-gray-700">
           <h2 className="text-3xl font-black my-5">Users</h2>
           <ul className="list-disc">{userList}</ul>
       </div>

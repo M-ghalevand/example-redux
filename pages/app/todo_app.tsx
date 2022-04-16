@@ -9,7 +9,7 @@ const todoApp = () => {
       <Head>
         <title>Todo App</title>
       </Head>
-      <Nav app="active" />
+      <Nav app="active" nav={undefined} about={undefined} resume={undefined} blog={undefined} conteact={undefined} />
       <div className="mr-200">
         <Navbar_todoApp />
         <main>

@@ -10,7 +10,7 @@ import {
 } from "@mui/icons-material";
 import AppsIcon from "@mui/icons-material/Apps";
 
-import style from "./scss/nav.module.scss";
+import style from "../../styles/nav.module.scss";
 
 function myFunc() {
   const x = document.getElementById("mynav");
@@ -87,7 +87,7 @@ export default function Nav({ nav, about, resume, blog, conteact, app }) {
               </a>
             </Link>
 
-            <Link href="/app">
+            <Link href="/index">
               <a className={`${app} nav-link`}>
                 <span className={style.NavMenuIcon}>
                   <AppsIcon />

@@ -8,7 +8,7 @@ const Home = () => {
       <Head>
         <title>Example react,redux-toolkit,next</title>
       </Head>
-      <Nav app="active" />
+      <Nav app="active" nav={undefined} about={undefined} resume={undefined} blog={undefined} conteact={undefined} />
       <div className="bg-light text-body">
         <Navbar_app />
         <div className="md:mr-52 ml-4 sm:mr-4 my-10">

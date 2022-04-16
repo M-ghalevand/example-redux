@@ -35,7 +35,7 @@ const UserId = ({user}) => {
             <div className="ltr mr-200">
                 <Navba_postApp_user users={user.name.substring(0, 6) + " User"}/>
                 <section className="bg-white min-h-screen">
-                    <div className="ml-32 pt-5">
+                    <div className="text-4xl font-bold mx-auto w-fit p-10 text-gray-700">
                         <h2 className="text-3xl font-black my-5">{user.name}</h2>
                         <ul className="list-disc">{postLink}</ul>
                     </div>

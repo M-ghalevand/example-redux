@@ -38,7 +38,7 @@ const PostList = () => {
   return (
     <>
       <AddPost />
-      <section className="posts-list bg-white">
+      <section className="bg-white">
         <h2 className="text-4xl font-bold mx-auto w-fit  my-10 px-10 text-gray-600" >Posts</h2>
         <div className="min-h-screen bg-white">{PostExcerptContent}</div>
       </section>

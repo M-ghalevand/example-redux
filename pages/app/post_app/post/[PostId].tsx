@@ -65,7 +65,7 @@ const PostId = ({data}) => {
             <div className="ltr mr-200">
                 <Navba_postApp_user users={"Post"}/>
                 <section className="bg-white min-h-screen p-10">
-                    <article className="ml-16 w-mx md:w-7/12 p-10 text-gray-600 border-2 rounded-lg">
+                    <article className=" w-mx md:w-7/12 p-10 border-2 rounded-lg mx-auto w-fit p-10 text-gray-600">
                         <h3 className="text-3xl font-black mt-4">{title}</h3>
                         <div>
                             <PostAuthor userId={userId}/>
