@@ -6,7 +6,7 @@ const WeatherApp = () => {
     return (
         <>
             <Head>
-                <title>Todo App</title>
+                <title>Weather App</title>
             </Head>
             <Nav
                 app="active"

@@ -12,7 +12,7 @@ const Navba_postApp_user = ({users}) => {
         >
             <section>
                 <h1 className="text-5xl font-black font-bold text-slate-100 left-0 pt-10 ml-5">
-                    {user}
+                    {user.substring(0, 19)}
                 </h1>
                 <div className="navContent flex md:relative ">
                     <div className="navLinks ml-10" style={{marginTop: "3.35rem"}}>

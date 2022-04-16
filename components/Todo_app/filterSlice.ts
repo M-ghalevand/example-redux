@@ -1,14 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const StatusFilters = {
+export const StatusFilters:{
+  All: string,
+  Active: string,
+  Completed: string,
+} = {
   All: "all",
   Active: "active",
   Completed: "completed",
 };
-const initState = {
+const initState:{status:string,colors:string[]} = {
   status: StatusFilters.All,
-  colors: [],
+  colors:[],
 };
+
 
 const filterSlice = createSlice({
   name: "filter",
@@ -30,7 +35,8 @@ const filterSlice = createSlice({
             break;
         }
       },
-      prepare(filter) {
+      // @ts-ignore
+      prepare (filter: { color: string, changType: string }) {
         return {
           payload: {
             color: filter.color,

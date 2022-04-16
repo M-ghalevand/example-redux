@@ -54,8 +54,7 @@ const AddPost = () => {
     };
 
     return (
-        // <section className="md:mr-52 ml-4 sm:mr-4 my-10 px-10 text-gray-600">
-        <section className="my-10 px-10 text-gray-600 mx-auto w-fit">
+        <section className="my-10 px-10 text-gray-600 mx-auto overflow-hidden md:w-3/5 sm:w-4/5">
             <h2 className="text-4xl font-bold mx-auto ">Add a New Post</h2>
             <Box>
                 <TextField

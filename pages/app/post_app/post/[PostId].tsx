@@ -63,15 +63,15 @@ const PostId = ({data}) => {
                 conteact={undefined}
             />
             <div className="ltr mr-200">
-                <Navba_postApp_user users={"Post"}/>
+                <Navba_postApp_user users={`title: ${title}`}/>
                 <section className="bg-white min-h-screen p-10">
-                    <article className=" w-mx md:w-7/12 p-10 border-2 rounded-lg mx-auto w-fit p-10 text-gray-600">
-                        <h3 className="text-3xl font-black mt-4">{title}</h3>
+                    <article className=" overflow-hidden md:w-3/5 sm:w-4/5 p-10 border-2 rounded-lg mx-auto w-fit p-10 text-gray-600">
+                        <h3 className="text-3xl font-black mt-4 break-words ">{title}</h3>
                         <div>
                             <PostAuthor userId={userId}/>
                             <TimeAge postId={id}/>
                         </div>
-                        <p className="post-content text-xl font-bold">{body}</p>
+                        <p className="post-content text-xl font-bold break-words ">{body}</p>
                         <PostReaction postId={id} reaction={reactions}/>
                         <EditPost title={title} body={body} id={id}/>
                     </article>

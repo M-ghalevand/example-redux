@@ -1,9 +1,9 @@
-import { createSlice, createSelector } from "@reduxjs/toolkit";
+import {createSlice, createSelector} from "@reduxjs/toolkit";
 
-import { StatusFilters } from "./filterSlice";
+import {StatusFilters} from "./filterSlice";
 
 const initState = {
-  entities: {},
+    entities: {},
 };
 
 let idNumber = 1;
@@ -67,51 +67,51 @@ export const selectTodosIds = (id) => (state) => state.todos.entities[id];
 export const capitalize = (s) => s[0].toUpperCase() + s.slice(1);
 
 export const selectTodos = createSelector(
-  (state) => state.todos.entities,
-  (select) => Object.values(select)
+    (state) => state.todos.entities,
+    (select) => Object.values(select)
 );
 
 const selectFilterTodos = createSelector(
-  selectTodos,
-  (state) => state.filter,
+    selectTodos,
+    (state) => state.filter,
 
-  (todos, filter) => {
-    const { status, colors } = filter;
-    const showAll = status === StatusFilters.All;
+    (todos, filter) => {
+        const {status, colors} = filter;
+        const showAll = status === StatusFilters.All;
 
-    if (showAll && colors.length === 0) {
-      return todos;
+        if (showAll && colors.length === 0) {
+            return todos;
+        }
+
+        const showCompleted = status === StatusFilters.Completed;
+
+        return todos.filter((todo) => {
+            const statusFilter = showAll || todo.completed === showCompleted;
+            const colorsFilter = colors.length === 0 || colors.includes(todo.color);
+
+            return statusFilter && colorsFilter;
+        });
     }
-
-    const showCompleted = status === StatusFilters.Completed;
-
-    return todos.filter((todo) => {
-      const statusFilter = showAll || todo.completed === showCompleted;
-      const colorsFilter = colors.length === 0 || colors.includes(todo.color);
-
-      return statusFilter && colorsFilter;
-    });
-  }
 );
 
 export const selectFilterdTodoIds = createSelector(
-  selectFilterTodos,
-  (filteredTodos) => filteredTodos.map((todo) => todo.id)
+    selectFilterTodos,
+    (filteredTodos) => filteredTodos.map((todo) => todo.id)
 );
 
 export const todoListRemaining = createSelector(
-  selectTodos,
-  (todoList) => todoList.filter((todo) => !todo.completed).length
+    selectTodos,
+    (todoList) => todoList.filter((todo) => !todo.completed).length
 );
 
 //end--------selected
 
 export const {
-  todoAdded,
-  todoToggled,
-  todoDeleted,
-  markAllCompleted,
-  clearCompleted,
-  colorChange,
+    todoAdded,
+    todoToggled,
+    todoDeleted,
+    markAllCompleted,
+    clearCompleted,
+    colorChange,
 } = todoSlice.actions;
 export default todoSlice.reducer;
