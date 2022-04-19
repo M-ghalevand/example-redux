@@ -8,19 +8,20 @@ const Navba_postApp_user = ({users}) => {
     return (
         <nav
             className="w-full bg-sky-700 ltr sm:mt-12 md:mt-0 "
-            style={{height: "11.19rem"}}
+            style={{ height: "12.79rem" }}
         >
             <section>
-                <h1 className="text-5xl font-black font-bold text-slate-100 left-0 pt-10 ml-5">
-                    {user.substring(0, 19)}
+                <h1 className="text-4xl font-black font-bold text-slate-100 left-0 pt-10 ml-5">
+              {/*<>      {user.length > 20 ? {user.substring(0, 21)} :{user.substring(0, 21)}}</>*/}
+              <>      {user.length > 20 ? user.substring(0, 18) + "..." :user.substring(0, 21)}</>
                 </h1>
                 <div className="navContent flex md:relative ">
-                    <div className="navLinks ml-10" style={{marginTop: "3.35rem"}}>
+                    <div className="navLinks ml-10 sm:ml-0 sm:flex flex-row sm:flex-nowrap" style={{marginTop: "5.45rem" }}>
                         <Link href="/app/post_app">
                             <a dideo-checked="true">
                                 <Button
                                     variant="contained"
-                                    className="bg-sky-900 font-bold ml-2"
+                                    className="bg-sky-900 font-bold ml-2 sm:normal-case  sm:ml-1"
                                     color="info"
                                 >
                                     Post App
@@ -31,7 +32,7 @@ const Navba_postApp_user = ({users}) => {
                             <a dideo-checked="true">
                                 <Button
                                     variant="contained"
-                                    className="bg-sky-900 font-bold ml-2"
+                                    className="bg-sky-900 font-bold ml-2 sm:normal-case  sm:ml-1"
                                     color="info"
                                 >
                                     Users
@@ -40,13 +41,13 @@ const Navba_postApp_user = ({users}) => {
                         </Link>
                     </div>
                     <div
-                        style={{marginTop: "3.35rem"}}
-                        className="md:absolute md:right-52 sm:ml-10"
+                        style={{marginTop: "5.45rem"}}
+                        className="absolute md:right-52 sm:ml-2 sm:right-2"
                     >
                         <a onClick={() => router.back()}>
                             <Button
                                 variant="contained"
-                                className="bg-sky-900 font-bold ml-2"
+                                className="bg-sky-900 font-bold ml-2 sm:normal-case  sm:ml-1"
                                 color="info"
                             >
                                 Back
@@ -56,7 +57,7 @@ const Navba_postApp_user = ({users}) => {
                             <a dideo-checked="true">
                                 <Button
                                     variant="contained"
-                                    className="bg-sky-900 font-bold ml-2"
+                                    className="bg-sky-900 font-bold ml-2 sm:normal-case  sm:ml-1"
                                     color="info"
                                 >
                                     Home

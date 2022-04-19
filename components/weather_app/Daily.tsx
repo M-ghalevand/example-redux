@@ -3,7 +3,7 @@ import Icon from "./Icon";
 
 const Daily = ({data}) => {
     return (
-        <div className='hover:border-4 px-5 pt-5 pb-10 rounded-3xl min-w-min max-w-max'>
+        <div className='hover:border-4 h-40 w-80 px-12 py-8 rounded-3xl grow-0 md:basis-1/2 sm:basis-full'>
             <span className="text-sky-700 ml-20"
                   title={moment(parseInt(data.dt + "000")).format('dddd')}>
                 {moment(parseInt(data.dt + "000")).format('dddd MMM Do')}

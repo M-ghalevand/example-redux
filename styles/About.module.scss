@@ -12,9 +12,8 @@
       font-size: 0.9rem;
     }
     .AboutInfo {
-      margin-right: 15px;
       ul {
-        margin-right: -27px;
+        margin-right: 8px;
         li {
           line-height: 1em;
           margin-bottom: 15px;
@@ -35,29 +34,6 @@
             a {
               color: #e1e1e1;
             }
-          }
-        }
-      }
-      .ResumeButton {
-        margin: 48px auto;
-        .BtnOutlinePrimary {
-          border: 2px solid $blueThemColor;
-          padding: 10px 20px;
-          text-transform: uppercase;
-          background-color: transparent;
-          -webkit-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-          cursor: pointer;
-          font-size: 14px;
-          color: $blueThemColor;
-          font-weight: 700;
-          position: relative;
-          line-height: 100%;
-          overflow: hidden;
-          &:hover {
-            color: #000;
-            background: $blueThemColor;
           }
         }
       }

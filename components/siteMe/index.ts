@@ -6,3 +6,5 @@ export { default as Navbar_postApp } from "./Navbar_postApp";
 export { default as Navbar_todoApp } from "./Navbar_todoApp";
 export { default as Preloader } from "./Preloader";
 export { default as Navbar_weatherApp } from "./Navbar_weatherApp";
+export { default as BlogItems } from "./BlogItems";
+export { default as ContactItems } from "./ContactItems";

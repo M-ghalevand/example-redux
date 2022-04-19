@@ -5,7 +5,7 @@ const Navbar_todoApp = () => {
   return (
     <nav
       className="w-full bg-sky-700 ltr sm:mt-12 md:mt-0 "
-      style={{ height: "11.19rem" }}
+      style={{ height: "12.79rem" }}
     >
       <section>
         <h1 className="text-5xl font-black font-bold text-slate-100 left-0 pt-10 ml-5">
@@ -13,14 +13,14 @@ const Navbar_todoApp = () => {
         </h1>
         <div className="navContent flex md:relative ">
           <div
-            style={{ marginTop: "3.35rem" }}
-            className="md:absolute md:right-52 sm:ml-10"
+            style={{ marginTop: "4.95rem"  }}
+            className="absolute md:right-52 sm:ml-2 sm:right-2"
           >
             <Link href="/app">
               <a dideo-checked="true">
                 <Button
                   variant="contained"
-                  className="bg-sky-900 font-bold ml-2"
+                  className="bg-sky-900 font-bold ml-2 sm:normal-case"
                   color="info"
                 >
                   Home

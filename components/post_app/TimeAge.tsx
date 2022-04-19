@@ -1,9 +1,9 @@
 import moment from "moment";
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
+import {AccessTime} from '@mui/icons-material';
 
 import { selectPostById } from "./postsSlice";
+
 
 const TimeAge = ({ postId }) => {
   const post1: { data: string } = useSelector((state) =>
@@ -22,7 +22,8 @@ const TimeAge = ({ postId }) => {
   return (
     <span title={"Time Post"} className="text-lg">
       &nbsp; &nbsp;
-      <FontAwesomeIcon icon={faClock} />
+
+      <AccessTime className="text-1xl"/>
       &nbsp; <i>{momentData.fromNow()}</i>
     </span>
   );

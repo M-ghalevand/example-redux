@@ -38,7 +38,7 @@
       }
       &:hover .BlogContent div,
       &:active .BlogContent div {
-        bottom: 3%;
+        bottom: 23%;
       }
 
       .BlogImage {
@@ -92,11 +92,11 @@
             &:hover,
             &:active {
               font-size: 2em;
-              width: 2em;
+              width: 2.4em;
             }
             &:hover img,
             &:active img {
-              width: 30px;
+              width:  2.4em;
             }
             svg {
               font-size: 1em;
@@ -125,6 +125,8 @@
           margin: 10px 20px 0 20px;
           font-size: 0.9rem;
           line-height: 1.7;
+          font-weight: 800;
+          text-shadow: 0 0 30px black;
         }
       }
     }

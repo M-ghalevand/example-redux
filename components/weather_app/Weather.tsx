@@ -8,7 +8,7 @@ interface IData {
     current: { dt: number };
     daily: [{
         dt: number;
-        temp: { (number) };
+        temp: {};
         humidity: number;
         wind_speed: number;
         weather: [{
@@ -22,30 +22,11 @@ interface IData {
 }
 
 interface ILocationData {
-    list: [{
-        id: number;
-        name: string;
-        coord: {
-            lat: number;
-            lon: number;
-        },
-        main: { (number) };
-        dt: number;
-        sys: {
-            country: string;
-        };
-        clouds: {
-            all: number;
-        };
-        weather: [
-            {
-                id: number;
-                main: string;
-                description: string;
+    name: string,
+    local_names: {},
+    coord: { lat: number, lon: number },
+    sys:{country: number}
 
-            }
-        ]
-    }]
 }
 
 const Weather = () => {
@@ -57,39 +38,48 @@ const Weather = () => {
     const [locationData, setLocationData] = useState<ILocationData>();
     const [location, setLocation] = useState("");
     const keys = "439d4b804bc8187953eb36d2a8c26a02"
-    const url = `https://openweathermap.org/data/2.5/find?q=${location}&appid=${keys}&units=metric`;
-    const url1 = `https://openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${keys}`;
+    const keys1 = "91c6b2b94bd67f6acd5580b6546b9a88"
+    const urlFindLocationLat = `https://openweathermap.org/data/2.5/find?q=${location}&appid=${keys}&units=metric`;
+    const urlLocationData = `https://openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${keys}`;
+
 
     const searchLocation = async (event) => {
         event.preventDefault()
-
-        const fetchLoction = await axios.get(url)
-        if (fetchLoction.data.count === 1) {
-            setLocationData(fetchLoction.data.list[0])
-            setLat(fetchLoction.data.list[0].coord.lat);
-            setLon(fetchLoction.data.list[0].coord.lon);
+        const fetchFindLoction = await axios.get(urlFindLocationLat)
+        if (fetchFindLoction.data.count === 1) {
             setStatus(true)
             setError(false)
+
         } else {
             setError(true)
         }
 
-
     };
-    useEffect(() => {
 
+
+    useEffect(() => {
         if (status === true) {
-            const loctionData = async () => {
-                setLocation("");
-                await axios.get(url1).then((response) => {
-                    setData(response.data);
-                });
+            const loctionCountry = async () => {
+                const fetchFindLoction = await axios.get(urlFindLocationLat)
+                setLocationData(fetchFindLoction.data.list[0])
+                setLat(fetchFindLoction.data.list[0].coord.lat);
+                setLon(fetchFindLoction.data.list[0].coord.lon);
             }
-            loctionData()
-            setStatus(false)
+            loctionCountry()
+
+            if (typeof lat === "number" && typeof lon === "number") {
+                const loctionData = async () => {
+                    setLocation("");
+                    const fetchFindLoction = await axios.get(urlLocationData)
+                    setData(fetchFindLoction.data);
+                }
+                loctionData()
+                setStatus(false)
+                return;
+            }
         }
 
-    }, [status]);
+    }, [status, lat, lon]);
 
 
     return (
@@ -113,14 +103,13 @@ const Weather = () => {
 
                         <Current data={data.current}/>
 
-                        <div className="md:columns-2 sm:columns-1">
+                        <div className="flex md:flex-row flex-wrap">
                             {data.daily.map((data, index) => <Daily key={index} data={data}/>)}
 
                         </div>
 
                     </>
                 }
-
 
 
             </div>
