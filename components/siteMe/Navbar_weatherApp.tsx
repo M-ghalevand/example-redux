@@ -13,18 +13,15 @@ const Navbar_weatherApp = () => {
                     Weather App
                 </h1>
                 <div className="navContent flex md:relative ">
-                    <div className="navLinks ml-10" style={{marginTop: "4.95rem" }}>
-
-                    </div>
                     <div
                         style={{marginTop: "4.95rem" }}
-                        className="md:absolute md:right-52 sm:ml-10"
+                        className="absolute md:right-52 sm:ml-2 sm:right-2"
                     >
                         <Link href="/app">
                             <a dideo-checked="true">
                                 <Button
                                     variant="contained"
-                                    className="bg-sky-900 font-bold ml-2"
+                                    className="bg-sky-900 font-bold ml-2 sm:normal-case"
                                     color="info"
                                 >
                                     Home

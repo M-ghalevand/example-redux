@@ -1,14 +1,10 @@
 import {Box, Button, TextField} from "@mui/material";
-import React from "react";
 
 const SearchWeather = ({searchLocation, setLocation, location}) => {
     return (
         <div className="w-11/12 ml-0 mt-12">
             <Box
                 component="form"
-                // sx={{
-                //     '& > :not(style)': {m: 1, width: '25ch'},
-                // }}
                 noValidate
                 autoComplete="off"
                 onSubmit={searchLocation}
