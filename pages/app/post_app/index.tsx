@@ -9,13 +9,21 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRocket} from "@fortawesome/free-solid-svg-icons"
 import style from "../../../styles/Scroll.module.scss"
 
-const PostApp = () => {
+const myFunc1 = () => {
+    const x = document.getElementById("mynav");
+    if (x.classList.item(2) === "XsBlock") {
+        x.classList.remove("XsBlock");
+        x.classList.add("XsHidden");
+    }
+};
+
+const Index = () => {
     const dispatch = useDispatch();
     dispatch(fetchusers());
 
 
     return (
-        <div className="ltr bg-white mr-200">
+        <>
             <Head>
                 <title>Post App</title>
             </Head>
@@ -28,21 +36,23 @@ const PostApp = () => {
                 blog={undefined}
                 conteact={undefined}
             />
-            <Navbar_postApp/>
+            <div className="ltr bg-white mr-200" onClick={myFunc1}>
+                <Navbar_postApp/>
 
-            <PostList/>
-            <ScrollTop
-                text={<FontAwesomeIcon icon={faRocket}/>}
-                distance={100}
-                breakpoint={768}
-                className={style.scroll}
-                speed={1100}
-                target={10}
-                icon={<FontAwesomeIcon icon={faRocket}/>}
-            />
+                <PostList/>
+                <ScrollTop
+                    text={<FontAwesomeIcon icon={faRocket}/>}
+                    distance={100}
+                    breakpoint={768}
+                    className={style.scroll}
+                    speed={1100}
+                    target={10}
+                    icon={<FontAwesomeIcon icon={faRocket}/>}
+                />
 
-        </div>
+            </div>
+        </>
     );
 };
 
-export default PostApp;
+export default Index;

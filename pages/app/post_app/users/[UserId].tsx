@@ -7,6 +7,14 @@ import {seletPostByUser} from "../../../../components/post_app/postsSlice";
 import {Navba_postApp_user, Nav} from "../../../../components/siteMe";
 import {post} from "../../../../services/url";
 
+const myFunc1 = () => {
+    const x = document.getElementById("mynav");
+    if (x.classList.item(2) === "XsBlock") {
+        x.classList.remove("XsBlock");
+        x.classList.add("XsHidden");
+    }
+};
+
 const UserId = ({user}) => {
     const userId: number = parseInt(useRouter().query.UserId as string);
     // @ts-ignore
@@ -32,7 +40,7 @@ const UserId = ({user}) => {
                 blog={undefined}
                 conteact={undefined}
             />
-            <div className="ltr mr-200">
+            <div className="ltr mr-200" onClick={myFunc1}>
                 <Navba_postApp_user users={user.name.substring(0, 6) + " User"}/>
                 <section className="bg-white min-h-screen">
                     <div className="text-4xl font-bold mx-auto w-fit p-10 text-gray-700">

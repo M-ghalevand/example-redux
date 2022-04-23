@@ -1,8 +1,14 @@
 import Head from "next/head";
 
 import {Navbar_app, Nav} from "../../components/siteMe";
-
-const Home = () => {
+const myFunc1 = () => {
+    const x = document.getElementById("mynav");
+    if (x.classList.item(2) === "XsBlock") {
+        x.classList.remove("XsBlock");
+        x.classList.add("XsHidden");
+    }
+};
+const Index = () => {
     return (
         <>
             <Head>
@@ -10,7 +16,7 @@ const Home = () => {
             </Head>
             <Nav app="active" nav={undefined} about={undefined} resume={undefined} blog={undefined}
                  conteact={undefined}/>
-            <div className="bg-light text-body">
+            <div className="bg-light text-body" onClick={myFunc1}>
                 <Navbar_app/>
                 <div className="md:mr-52 ml-4 sm:mr-4 my-10">
                     <ul className="app-ul rtl text-white mr-5">
@@ -161,4 +167,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Index;
